@@ -45,7 +45,7 @@ interface fastfoodID{
 export default function Restuarant({id}: fastfoodID) {
 
     const dispatch = useAppDispatch();
-
+    const [isVisible, setIsVisible] = useState(false);
     let restuarants = useAppSelector((state) => state.final.restuarants);
     // console.log(restuarants);
     const status = useAppSelector((state) => state.final.status);
@@ -60,7 +60,9 @@ export default function Restuarant({id}: fastfoodID) {
         } 
 
     }, [status, dispatch]);
-    
+    function toggleVisibility(){
+        setIsVisible(!isVisible);
+    }
     return (
 
         <div>
@@ -71,8 +73,11 @@ export default function Restuarant({id}: fastfoodID) {
                         {status === 'failed' && <p>Error: {error}</p>}
                         {status === 'succeeded' && (
                             <>
+                                <button onClick={toggleVisibility}>{isVisible ? "Hide Rating" : "Show Rating"}</button>
                                 <p>{restuarants[id-1].Name}</p>
-                                <p>Rating: {restuarants[id-1].Rating}</p>
+                                {isVisible && (
+                                    <p>Rating: {restuarants[id-1].Rating}</p>
+                                )}
                             </>
                         )}
                 </div>

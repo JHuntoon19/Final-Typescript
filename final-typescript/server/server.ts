@@ -63,5 +63,4 @@ app.get('/api/data', (req: Request, res: Response) => {
     res.json(rows);
 
   });
-
 });

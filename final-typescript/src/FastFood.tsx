@@ -40,10 +40,6 @@ export default function FastFood({id}: fastfoodProps){
         
             <img src={photo}></img>
             <Restuarant id={id} />
-            <div className="btn-container">
-                <button onClick={increaseLove}>Love</button>
-                <button onClick={increaseHate}>Hate</button>
-            </div>
         </>
     )
 }
