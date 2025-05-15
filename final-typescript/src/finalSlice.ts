@@ -11,7 +11,7 @@ const initialState: FinalState = {  restuarants: [],  status: 'idle',  error: nu
 
 export const fetchRestuarants = createAsyncThunk('final/fetchRestuarants', async () => {
 
-const response = await axios.get('/api/data');
+const response = await axios.get('https://final-typescript.onrender.com/api/data');
 
 return response.data;
 
