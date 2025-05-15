@@ -35,7 +35,7 @@ app.listen(port, () => {
 
 });
 //Connect to database
-const db = new sqlite3.Database('./db/fastFood.db', (err) => {
+const db = new sqlite3.Database('../db/fastFood.db', (err) => {
 
   if (err) {
 
